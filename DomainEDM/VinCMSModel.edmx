@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="vincmsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="vincmsModelStoreContainer">
+          <EntitySet Name="BlogPost" EntityType="vincmsModel.Store.BlogPost" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Category" EntityType="vincmsModel.Store.Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Comment" EntityType="vincmsModel.Store.Comment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentCategory" EntityType="vincmsModel.Store.ContentCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentContainer" EntityType="vincmsModel.Store.ContentContainer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentMedia" EntityType="vincmsModel.Store.ContentMedia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContentTag" EntityType="vincmsModel.Store.ContentTag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="GenericContentBlock" EntityType="vincmsModel.Store.GenericContentBlock" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Media" EntityType="vincmsModel.Store.Media" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MimeType" EntityType="vincmsModel.Store.MimeType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Page" EntityType="vincmsModel.Store.Page" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Position" EntityType="vincmsModel.Store.Position" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RolePermissions" EntityType="vincmsModel.Store.RolePermissions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tag" EntityType="vincmsModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="vincmsModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserRole" EntityType="vincmsModel.Store.UserRole" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BlogPost_ContentContainer" Association="vincmsModel.Store.FK_BlogPost_ContentContainer">
+            <End Role="ContentContainer" EntitySet="ContentContainer" />
+            <End Role="BlogPost" EntitySet="BlogPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BlogPost_User" Association="vincmsModel.Store.FK_BlogPost_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="BlogPost" EntitySet="BlogPost" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_BlogPost" Association="vincmsModel.Store.FK_Comment_BlogPost">
+            <End Role="BlogPost" EntitySet="BlogPost" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentCategory_Category" Association="vincmsModel.Store.FK_ContentCategory_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ContentCategory" EntitySet="ContentCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentCategory_ContentContainer" Association="vincmsModel.Store.FK_ContentCategory_ContentContainer">
+            <End Role="ContentContainer" EntitySet="ContentContainer" />
+            <End Role="ContentCategory" EntitySet="ContentCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentMedia_ContentContainer" Association="vincmsModel.Store.FK_ContentMedia_ContentContainer">
+            <End Role="ContentContainer" EntitySet="ContentContainer" />
+            <End Role="ContentMedia" EntitySet="ContentMedia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentMedia_Media" Association="vincmsModel.Store.FK_ContentMedia_Media">
+            <End Role="Media" EntitySet="Media" />
+            <End Role="ContentMedia" EntitySet="ContentMedia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentTag_ContentContainer" Association="vincmsModel.Store.FK_ContentTag_ContentContainer">
+            <End Role="ContentContainer" EntitySet="ContentContainer" />
+            <End Role="ContentTag" EntitySet="ContentTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContentTag_Tag" Association="vincmsModel.Store.FK_ContentTag_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="ContentTag" EntitySet="ContentTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GenericContentContainer_ContentContainer" Association="vincmsModel.Store.FK_GenericContentContainer_ContentContainer">
+            <End Role="ContentContainer" EntitySet="ContentContainer" />
+            <End Role="GenericContentBlock" EntitySet="GenericContentBlock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GenericContentContainer_Position" Association="vincmsModel.Store.FK_GenericContentContainer_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="GenericContentBlock" EntitySet="GenericContentBlock" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Media_MimeType" Association="vincmsModel.Store.FK_Media_MimeType">
+            <End Role="MimeType" EntitySet="MimeType" />
+            <End Role="Media" EntitySet="Media" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Page_ContentContainer" Association="vincmsModel.Store.FK_Page_ContentContainer">
+            <End Role="ContentContainer" EntitySet="ContentContainer" />
+            <End Role="Page" EntitySet="Page" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermissions_UserRole" Association="vincmsModel.Store.FK_RolePermissions_UserRole">
+            <End Role="UserRole" EntitySet="UserRole" />
+            <End Role="RolePermissions" EntitySet="RolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserRole" Association="vincmsModel.Store.FK_User_UserRole">
+            <End Role="UserRole" EntitySet="UserRole" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BlogPost">
+          <Key>
+            <PropertyRef Name="BlogPostID" />
+          </Key>
+          <Property Name="BlogPostID" Type="int" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="PublishingDate" Type="datetime" />
+          <Property Name="IsDraft" Type="bit" Nullable="false" />
+          <Property Name="AuthorID" Type="int" Nullable="false" />
+          <Property Name="Summary" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CommentContent" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="UserWebsite" Type="nvarchar" MaxLength="50" />
+          <Property Name="CommentDate" Type="datetime" Nullable="false" />
+          <Property Name="BlogPostID" Type="int" />
+        </EntityType>
+        <EntityType Name="ContentCategory">
+          <Key>
+            <PropertyRef Name="ContentID" />
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="ContentID" Type="int" Nullable="false" />
+          <Property Name="CategoryID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentContainer">
+          <Key>
+            <PropertyRef Name="ContentID" />
+          </Key>
+          <Property Name="ContentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BodyContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="MetaDescription" Type="nvarchar" MaxLength="200" />
+          <Property Name="MetaAuthor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ContentMedia">
+          <Key>
+            <PropertyRef Name="ContentID" />
+            <PropertyRef Name="MediaID" />
+          </Key>
+          <Property Name="ContentID" Type="int" Nullable="false" />
+          <Property Name="MediaID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContentTag">
+          <Key>
+            <PropertyRef Name="ContentID" />
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="ContentID" Type="int" Nullable="false" />
+          <Property Name="TagID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GenericContentBlock">
+          <Key>
+            <PropertyRef Name="GenericContentID" />
+          </Key>
+          <Property Name="GenericContentID" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="PositionID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Media">
+          <Key>
+            <PropertyRef Name="MediaID" />
+          </Key>
+          <Property Name="MediaID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Path" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="FileName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="MimeTypeID" Type="int" Nullable="false" />
+          <Property Name="Size" Type="float" Nullable="false" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Height" Type="int" />
+          <Property Name="Extension" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="UploadDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MimeType">
+          <Key>
+            <PropertyRef Name="MimeID" />
+          </Key>
+          <Property Name="MimeID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Page">
+          <Key>
+            <PropertyRef Name="PageID" />
+          </Key>
+          <Property Name="PageID" Type="int" Nullable="false" />
+          <Property Name="IsHomePage" Type="bit" Nullable="false" />
+          <Property Name="IsNavigablePage" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PositionID" />
+          </Key>
+          <Property Name="PositionID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RolePermissions">
+          <Key>
+            <PropertyRef Name="RolePermissionsID" />
+          </Key>
+          <Property Name="RolePermissionsID" Type="int" Nullable="false" />
+          <Property Name="IsAdmin" Type="bit" Nullable="false" />
+          <Property Name="CanCreateContent" Type="bit" Nullable="false" />
+          <Property Name="CanDeleteContent" Type="bit" Nullable="false" />
+          <Property Name="CanEditContent" Type="bit" Nullable="false" />
+          <Property Name="CanCreateUser" Type="bit" Nullable="false" />
+          <Property Name="CanDeleteUser" Type="bit" Nullable="false" />
+          <Property Name="CanEditUser" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="RealName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RealSurname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Biography" Type="nvarchar" MaxLength="200" />
+          <Property Name="Photo" Type="varbinary(max)" />
+          <Property Name="WebsiteAddress" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_BlogPost_ContentContainer">
+          <End Role="ContentContainer" Type="vincmsModel.Store.ContentContainer" Multiplicity="1" />
+          <End Role="BlogPost" Type="vincmsModel.Store.BlogPost" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ContentContainer">
+              <PropertyRef Name="ContentID" />
+            </Principal>
+            <Dependent Role="BlogPost">
+              <PropertyRef Name="BlogPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BlogPost_User">
+          <End Role="User" Type="vincmsModel.Store.User" Multiplicity="1" />
+          <End Role="BlogPost" Type="vincmsModel.Store.BlogPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="BlogPost">
+              <PropertyRef Name="AuthorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_BlogPost">
+          <End Role="BlogPost" Type="vincmsModel.Store.BlogPost" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comment" Type="vincmsModel.Store.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogPost">
+              <PropertyRef Name="BlogPostID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="BlogPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentCategory_Category">
+          <End Role="Category" Type="vincmsModel.Store.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ContentCategory" Type="vincmsModel.Store.ContentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryID" />
+            </Principal>
+            <Dependent Role="ContentCategory">
+              <PropertyRef Name="CategoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentCategory_ContentContainer">
+          <End Role="ContentContainer" Type="vincmsModel.Store.ContentContainer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ContentCategory" Type="vincmsModel.Store.ContentCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentContainer">
+              <PropertyRef Name="ContentID" />
+            </Principal>
+            <Dependent Role="ContentCategory">
+              <PropertyRef Name="ContentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentMedia_ContentContainer">
+          <End Role="ContentContainer" Type="vincmsModel.Store.ContentContainer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ContentMedia" Type="vincmsModel.Store.ContentMedia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentContainer">
+              <PropertyRef Name="ContentID" />
+            </Principal>
+            <Dependent Role="ContentMedia">
+              <PropertyRef Name="ContentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentMedia_Media">
+          <End Role="Media" Type="vincmsModel.Store.Media" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ContentMedia" Type="vincmsModel.Store.ContentMedia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Media">
+              <PropertyRef Name="MediaID" />
+            </Principal>
+            <Dependent Role="ContentMedia">
+              <PropertyRef Name="MediaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentTag_ContentContainer">
+          <End Role="ContentContainer" Type="vincmsModel.Store.ContentContainer" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ContentTag" Type="vincmsModel.Store.ContentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContentContainer">
+              <PropertyRef Name="ContentID" />
+            </Principal>
+            <Dependent Role="ContentTag">
+              <PropertyRef Name="ContentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContentTag_Tag">
+          <End Role="Tag" Type="vincmsModel.Store.Tag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ContentTag" Type="vincmsModel.Store.ContentTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagID" />
+            </Principal>
+            <Dependent Role="ContentTag">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GenericContentContainer_ContentContainer">
+          <End Role="ContentContainer" Type="vincmsModel.Store.ContentContainer" Multiplicity="1" />
+          <End Role="GenericContentBlock" Type="vincmsModel.Store.GenericContentBlock" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ContentContainer">
+              <PropertyRef Name="ContentID" />
+            </Principal>
+            <Dependent Role="GenericContentBlock">
+              <PropertyRef Name="GenericContentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GenericContentContainer_Position">
+          <End Role="Position" Type="vincmsModel.Store.Position" Multiplicity="1" />
+          <End Role="GenericContentBlock" Type="vincmsModel.Store.GenericContentBlock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PositionID" />
+            </Principal>
+            <Dependent Role="GenericContentBlock">
+              <PropertyRef Name="PositionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Media_MimeType">
+          <End Role="MimeType" Type="vincmsModel.Store.MimeType" Multiplicity="1" />
+          <End Role="Media" Type="vincmsModel.Store.Media" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MimeType">
+              <PropertyRef Name="MimeID" />
+            </Principal>
+            <Dependent Role="Media">
+              <PropertyRef Name="MimeTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Page_ContentContainer">
+          <End Role="ContentContainer" Type="vincmsModel.Store.ContentContainer" Multiplicity="1" />
+          <End Role="Page" Type="vincmsModel.Store.Page" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="ContentContainer">
+              <PropertyRef Name="ContentID" />
+            </Principal>
+            <Dependent Role="Page">
+              <PropertyRef Name="PageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermissions_UserRole">
+          <End Role="UserRole" Type="vincmsModel.Store.UserRole" Multiplicity="1" />
+          <End Role="RolePermissions" Type="vincmsModel.Store.RolePermissions" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="RolePermissions">
+              <PropertyRef Name="RolePermissionsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserRole">
+          <End Role="UserRole" Type="vincmsModel.Store.UserRole" Multiplicity="1" />
+          <End Role="User" Type="vincmsModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="vincmsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="VinCMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="vincmsModel.Category" />
+          <EntitySet Name="Comments" EntityType="vincmsModel.Comment" />
+          <EntitySet Name="ContentContainers" EntityType="vincmsModel.ContentContainer" />
+          <EntitySet Name="Medias" EntityType="vincmsModel.Media" />
+          <EntitySet Name="MimeTypes" EntityType="vincmsModel.MimeType" />
+          <EntitySet Name="Positions" EntityType="vincmsModel.Position" />
+          <EntitySet Name="RolePermissions" EntityType="vincmsModel.RolePermission" />
+          <EntitySet Name="Tags" EntityType="vincmsModel.Tag" />
+          <EntitySet Name="Users" EntityType="vincmsModel.User" />
+          <EntitySet Name="UserRoles" EntityType="vincmsModel.UserRole" />
+          <AssociationSet Name="FK_BlogPost_User" Association="vincmsModel.FK_BlogPost_User">
+            <End Role="User" EntitySet="Users" />
+            <End Role="BlogPost" EntitySet="ContentContainers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_BlogPost" Association="vincmsModel.FK_Comment_BlogPost">
+            <End Role="BlogPost" EntitySet="ContentContainers" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GenericContentContainer_Position" Association="vincmsModel.FK_GenericContentContainer_Position">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="GenericContentBlock" EntitySet="ContentContainers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Media_MimeType" Association="vincmsModel.FK_Media_MimeType">
+            <End Role="MimeType" EntitySet="MimeTypes" />
+            <End Role="Media" EntitySet="Medias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RolePermissions_UserRole" Association="vincmsModel.FK_RolePermissions_UserRole">
+            <End Role="UserRole" EntitySet="UserRoles" />
+            <End Role="RolePermissions" EntitySet="RolePermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_UserRole" Association="vincmsModel.FK_User_UserRole">
+            <End Role="UserRole" EntitySet="UserRoles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="ContentCategory" Association="vincmsModel.ContentCategory">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="ContentContainer" EntitySet="ContentContainers" />
+          </AssociationSet>
+          <AssociationSet Name="ContentMedia" Association="vincmsModel.ContentMedia">
+            <End Role="ContentContainer" EntitySet="ContentContainers" />
+            <End Role="Media" EntitySet="Medias" />
+          </AssociationSet>
+          <AssociationSet Name="ContentTag" Association="vincmsModel.ContentTag">
+            <End Role="ContentContainer" EntitySet="ContentContainers" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BlogPost" BaseType="vincmsModel.ContentContainer">
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+          <Property Name="PublishingDate" Type="DateTime" />
+          <Property Name="IsDraft" Type="Boolean" Nullable="false" />
+          <Property Name="AuthorID" Type="Int32" Nullable="false" />
+          <Property Name="Summary" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User" Relationship="vincmsModel.FK_BlogPost_User" FromRole="BlogPost" ToRole="User" />
+          <NavigationProperty Name="Comments" Relationship="vincmsModel.FK_Comment_BlogPost" FromRole="BlogPost" ToRole="Comment" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentContainers" Relationship="vincmsModel.ContentCategory" FromRole="Category" ToRole="ContentContainer" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentID" />
+          </Key>
+          <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CommentContent" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="UserWebsite" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CommentDate" Type="DateTime" Nullable="false" />
+          <Property Name="BlogPostID" Type="Int32" />
+          <NavigationProperty Name="BlogPost" Relationship="vincmsModel.FK_Comment_BlogPost" FromRole="Comment" ToRole="BlogPost" />
+        </EntityType>
+        <EntityType Name="ContentContainer" Abstract="true">
+          <Key>
+            <PropertyRef Name="ContentID" />
+          </Key>
+          <Property Name="ContentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BodyContent" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="MetaDescription" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="MetaAuthor" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Categories" Relationship="vincmsModel.ContentCategory" FromRole="ContentContainer" ToRole="Category" />
+          <NavigationProperty Name="Media" Relationship="vincmsModel.ContentMedia" FromRole="ContentContainer" ToRole="Media" />
+          <NavigationProperty Name="Tags" Relationship="vincmsModel.ContentTag" FromRole="ContentContainer" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="GenericContentBlock" BaseType="vincmsModel.ContentContainer">
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="PositionID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Position" Relationship="vincmsModel.FK_GenericContentContainer_Position" FromRole="GenericContentBlock" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="Media">
+          <Key>
+            <PropertyRef Name="MediaID" />
+          </Key>
+          <Property Name="MediaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Path" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MimeTypeID" Type="Int32" Nullable="false" />
+          <Property Name="Size" Type="Double" Nullable="false" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="Extension" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UploadDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="MimeType" Relationship="vincmsModel.FK_Media_MimeType" FromRole="Media" ToRole="MimeType" />
+          <NavigationProperty Name="ContentContainers" Relationship="vincmsModel.ContentMedia" FromRole="Media" ToRole="ContentContainer" />
+        </EntityType>
+        <EntityType Name="MimeType">
+          <Key>
+            <PropertyRef Name="MimeID" />
+          </Key>
+          <Property Name="MimeID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Media" Relationship="vincmsModel.FK_Media_MimeType" FromRole="MimeType" ToRole="Media" />
+        </EntityType>
+        <EntityType Name="Page" BaseType="vincmsModel.ContentContainer">
+          <Property Name="IsHomePage" Type="Boolean" Nullable="false" />
+          <Property Name="IsNavigablePage" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="PositionID" />
+          </Key>
+          <Property Name="PositionID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="GenericContentBlocks" Relationship="vincmsModel.FK_GenericContentContainer_Position" FromRole="Position" ToRole="GenericContentBlock" />
+        </EntityType>
+        <EntityType Name="RolePermission">
+          <Key>
+            <PropertyRef Name="RolePermissionsID" />
+          </Key>
+          <Property Name="RolePermissionsID" Type="Int32" Nullable="false" />
+          <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="CanCreateContent" Type="Boolean" Nullable="false" />
+          <Property Name="CanDeleteContent" Type="Boolean" Nullable="false" />
+          <Property Name="CanEditContent" Type="Boolean" Nullable="false" />
+          <Property Name="CanCreateUser" Type="Boolean" Nullable="false" />
+          <Property Name="CanDeleteUser" Type="Boolean" Nullable="false" />
+          <Property Name="CanEditUser" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="UserRole" Relationship="vincmsModel.FK_RolePermissions_UserRole" FromRole="RolePermissions" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="ContentContainers" Relationship="vincmsModel.ContentTag" FromRole="Tag" ToRole="ContentContainer" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="RealName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RealSurname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Biography" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WebsiteAddress" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BlogPosts" Relationship="vincmsModel.FK_BlogPost_User" FromRole="User" ToRole="BlogPost" />
+          <NavigationProperty Name="UserRole" Relationship="vincmsModel.FK_User_UserRole" FromRole="User" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="RolePermission" Relationship="vincmsModel.FK_RolePermissions_UserRole" FromRole="UserRole" ToRole="RolePermissions" />
+          <NavigationProperty Name="Users" Relationship="vincmsModel.FK_User_UserRole" FromRole="UserRole" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_BlogPost_User">
+          <End Role="User" Type="vincmsModel.User" Multiplicity="1" />
+          <End Role="BlogPost" Type="vincmsModel.BlogPost" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="BlogPost">
+              <PropertyRef Name="AuthorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_BlogPost">
+          <End Role="BlogPost" Type="vincmsModel.BlogPost" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Comment" Type="vincmsModel.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogPost">
+              <PropertyRef Name="ContentID" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="BlogPostID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GenericContentContainer_Position">
+          <End Role="Position" Type="vincmsModel.Position" Multiplicity="1" />
+          <End Role="GenericContentBlock" Type="vincmsModel.GenericContentBlock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="PositionID" />
+            </Principal>
+            <Dependent Role="GenericContentBlock">
+              <PropertyRef Name="PositionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Media_MimeType">
+          <End Role="MimeType" Type="vincmsModel.MimeType" Multiplicity="1" />
+          <End Role="Media" Type="vincmsModel.Media" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MimeType">
+              <PropertyRef Name="MimeID" />
+            </Principal>
+            <Dependent Role="Media">
+              <PropertyRef Name="MimeTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RolePermissions_UserRole">
+          <End Role="UserRole" Type="vincmsModel.UserRole" Multiplicity="1" />
+          <End Role="RolePermissions" Type="vincmsModel.RolePermission" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="RolePermissions">
+              <PropertyRef Name="RolePermissionsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_UserRole">
+          <End Role="UserRole" Type="vincmsModel.UserRole" Multiplicity="1" />
+          <End Role="User" Type="vincmsModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleID" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ContentCategory">
+          <End Role="Category" Type="vincmsModel.Category" Multiplicity="*" />
+          <End Role="ContentContainer" Type="vincmsModel.ContentContainer" Multiplicity="*" />
+        </Association>
+        <Association Name="ContentMedia">
+          <End Role="ContentContainer" Type="vincmsModel.ContentContainer" Multiplicity="*" />
+          <End Role="Media" Type="vincmsModel.Media" Multiplicity="*" />
+        </Association>
+        <Association Name="ContentTag">
+          <End Role="ContentContainer" Type="vincmsModel.ContentContainer" Multiplicity="*" />
+          <End Role="Tag" Type="vincmsModel.Tag" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="vincmsModelStoreContainer" CdmEntityContainer="VinCMSEntities">
+          <EntitySetMapping Name="Categories"><EntityTypeMapping TypeName="vincmsModel.Category"><MappingFragment StoreEntitySet="Category">
+            <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Comments"><EntityTypeMapping TypeName="vincmsModel.Comment"><MappingFragment StoreEntitySet="Comment">
+            <ScalarProperty Name="CommentID" ColumnName="CommentID" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+            <ScalarProperty Name="UserWebsite" ColumnName="UserWebsite" />
+            <ScalarProperty Name="CommentDate" ColumnName="CommentDate" />
+            <ScalarProperty Name="BlogPostID" ColumnName="BlogPostID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ContentContainers">
+            <EntityTypeMapping TypeName="IsTypeOf(vincmsModel.ContentContainer)">
+              <MappingFragment StoreEntitySet="ContentContainer">
+                <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="MetaAuthor" ColumnName="MetaAuthor" />
+                <ScalarProperty Name="MetaDescription" ColumnName="MetaDescription" />
+                <ScalarProperty Name="BodyContent" ColumnName="BodyContent" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(vincmsModel.BlogPost)">
+              <MappingFragment StoreEntitySet="BlogPost">
+                <ScalarProperty Name="ContentID" ColumnName="BlogPostID" />
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="AuthorID" ColumnName="AuthorID" />
+                <ScalarProperty Name="IsDraft" ColumnName="IsDraft" />
+                <ScalarProperty Name="PublishingDate" ColumnName="PublishingDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(vincmsModel.Page)">
+              <MappingFragment StoreEntitySet="Page">
+                <ScalarProperty Name="ContentID" ColumnName="PageID" />
+                <ScalarProperty Name="IsNavigablePage" ColumnName="IsNavigablePage" />
+                <ScalarProperty Name="IsHomePage" ColumnName="IsHomePage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+            <EntityTypeMapping TypeName="IsTypeOf(vincmsModel.GenericContentBlock)">
+              <MappingFragment StoreEntitySet="GenericContentBlock">
+                <ScalarProperty Name="ContentID" ColumnName="GenericContentID" />
+                <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Medias"><EntityTypeMapping TypeName="vincmsModel.Media"><MappingFragment StoreEntitySet="Media">
+            <ScalarProperty Name="MediaID" ColumnName="MediaID" />
+            <ScalarProperty Name="Path" ColumnName="Path" />
+            <ScalarProperty Name="FileName" ColumnName="FileName" />
+            <ScalarProperty Name="MimeTypeID" ColumnName="MimeTypeID" />
+            <ScalarProperty Name="Size" ColumnName="Size" />
+            <ScalarProperty Name="Width" ColumnName="Width" />
+            <ScalarProperty Name="Height" ColumnName="Height" />
+            <ScalarProperty Name="Extension" ColumnName="Extension" />
+            <ScalarProperty Name="UploadDate" ColumnName="UploadDate" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MimeTypes"><EntityTypeMapping TypeName="vincmsModel.MimeType"><MappingFragment StoreEntitySet="MimeType">
+            <ScalarProperty Name="MimeID" ColumnName="MimeID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Positions"><EntityTypeMapping TypeName="vincmsModel.Position"><MappingFragment StoreEntitySet="Position">
+            <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="RolePermissions"><EntityTypeMapping TypeName="vincmsModel.RolePermission"><MappingFragment StoreEntitySet="RolePermissions">
+            <ScalarProperty Name="RolePermissionsID" ColumnName="RolePermissionsID" />
+            <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+            <ScalarProperty Name="CanCreateContent" ColumnName="CanCreateContent" />
+            <ScalarProperty Name="CanDeleteContent" ColumnName="CanDeleteContent" />
+            <ScalarProperty Name="CanEditContent" ColumnName="CanEditContent" />
+            <ScalarProperty Name="CanCreateUser" ColumnName="CanCreateUser" />
+            <ScalarProperty Name="CanDeleteUser" ColumnName="CanDeleteUser" />
+            <ScalarProperty Name="CanEditUser" ColumnName="CanEditUser" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Tags"><EntityTypeMapping TypeName="vincmsModel.Tag"><MappingFragment StoreEntitySet="Tag">
+            <ScalarProperty Name="TagID" ColumnName="TagID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="vincmsModel.User"><MappingFragment StoreEntitySet="User">
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+            <ScalarProperty Name="RealName" ColumnName="RealName" />
+            <ScalarProperty Name="RealSurname" ColumnName="RealSurname" />
+            <ScalarProperty Name="Biography" ColumnName="Biography" />
+            <ScalarProperty Name="Photo" ColumnName="Photo" />
+            <ScalarProperty Name="WebsiteAddress" ColumnName="WebsiteAddress" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserRoles"><EntityTypeMapping TypeName="vincmsModel.UserRole"><MappingFragment StoreEntitySet="UserRole">
+            <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <AssociationSetMapping Name="ContentCategory" TypeName="vincmsModel.ContentCategory" StoreEntitySet="ContentCategory">
+            <EndProperty Name="Category">
+              <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+            </EndProperty>
+            <EndProperty Name="ContentContainer">
+              <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ContentMedia" TypeName="vincmsModel.ContentMedia" StoreEntitySet="ContentMedia">
+            <EndProperty Name="ContentContainer">
+              <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+            </EndProperty>
+            <EndProperty Name="Media">
+              <ScalarProperty Name="MediaID" ColumnName="MediaID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ContentTag" TypeName="vincmsModel.ContentTag" StoreEntitySet="ContentTag">
+            <EndProperty Name="ContentContainer">
+              <ScalarProperty Name="ContentID" ColumnName="ContentID" />
+            </EndProperty>
+            <EndProperty Name="Tag">
+              <ScalarProperty Name="TagID" ColumnName="TagID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="VinCMSModel">
+        <EntityTypeShape EntityType="vincmsModel.BlogPost" Width="1.5" PointX="7.375" PointY="6.5" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.Category" Width="1.5" PointX="1.5" PointY="2.25" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.Comment" Width="1.5" PointX="9.625" PointY="7" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.ContentContainer" Width="1.5" PointX="5.375" PointY="2.5" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.GenericContentBlock" Width="1.5" PointX="5.25" PointY="6.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.Media" Width="1.5" PointX="8.375" PointY="2.5" Height="3.1340950520833322" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.MimeType" Width="1.5" PointX="10.25" PointY="2.625" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.Page" Width="1.5" PointX="3.25" PointY="6.5" Height="1.4033821614583326" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.Position" Width="1.5" PointX="5.25" PointY="8.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.RolePermission" Width="1.5" PointX="11.375" PointY="12.125" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.Tag" Width="1.5" PointX="1.5" PointY="4.125" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.User" Width="1.5" PointX="9.25" PointY="9.875" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="vincmsModel.UserRole" Width="1.5" PointX="11.375" PointY="10.125" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="vincmsModel.FK_BlogPost_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.40625" PointY="9.875" />
+          <ConnectorPoint PointX="9.40625" PointY="6.71875" />
+          <ConnectorPoint PointX="8.875" PointY="6.71875" />
+        </AssociationConnector>
+        <AssociationConnector Association="vincmsModel.FK_Comment_BlogPost" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.875" PointY="7.9324446614583337" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="7.9324446614583328" />
+          <ConnectorPoint PointX="9.4895833333333339" PointY="7.9324446614583337" />
+          <ConnectorPoint PointX="9.625" PointY="7.9324446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="vincmsModel.FK_GenericContentContainer_Position" ManuallyRouted="false">
+          <ConnectorPoint PointX="6" PointY="8.875" />
+          <ConnectorPoint PointX="6" PointY="8.09568359375" />
+        </AssociationConnector>
+        <AssociationConnector Association="vincmsModel.FK_Media_MimeType" ManuallyRouted="false">
+          <ConnectorPoint PointX="10.25" PointY="3.422841796875" />
+          <ConnectorPoint PointX="9.875" PointY="3.422841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="vincmsModel.FK_RolePermissions_UserRole" ManuallyRouted="false">
+          <ConnectorPoint PointX="12.125" PointY="11.912985026041667" />
+          <ConnectorPoint PointX="12.125" PointY="12.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="vincmsModel.FK_User_UserRole" ManuallyRouted="false">
+          <ConnectorPoint PointX="11.375" PointY="11.018992513020834" />
+          <ConnectorPoint PointX="10.75" PointY="11.018992513020834" />
+        </AssociationConnector>
+        <AssociationConnector Association="vincmsModel.ContentCategory" ManuallyRouted="false">
+          <ConnectorPoint PointX="3" PointY="3.172841796875" />
+          <ConnectorPoint PointX="5.375" PointY="3.172841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="vincmsModel.ContentMedia" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.875" PointY="4.0670475260416659" />
+          <ConnectorPoint PointX="8.375" PointY="4.0670475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="vincmsModel.ContentTag" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.375" PointY="4.7833968098958337" />
+          <ConnectorPoint PointX="3" PointY="4.7833968098958337" />
+        </AssociationConnector>
+        <InheritanceConnector EntityType="vincmsModel.BlogPost">
+          <ConnectorPoint PointX="6.125" PointY="5.2494921875" />
+          <ConnectorPoint PointX="6.125" PointY="6.125" />
+          <ConnectorPoint PointX="8.125" PointY="6.125" />
+          <ConnectorPoint PointX="8.125" PointY="6.5" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="vincmsModel.Page">
+          <ConnectorPoint PointX="6.125" PointY="5.2494921875" />
+          <ConnectorPoint PointX="6.125" PointY="6.125" />
+          <ConnectorPoint PointX="4" PointY="6.125" />
+          <ConnectorPoint PointX="4" PointY="6.5" />
+        </InheritanceConnector>
+        <InheritanceConnector EntityType="vincmsModel.GenericContentBlock">
+          <ConnectorPoint PointX="6.125" PointY="5.2494921875" />
+          <ConnectorPoint PointX="6.125" PointY="6.125" />
+          <ConnectorPoint PointX="6" PointY="6.125" />
+          <ConnectorPoint PointX="6" PointY="6.5" />
+        </InheritanceConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

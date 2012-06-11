@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <asp:ContentPlaceHolder ID="HeaderContent" runat="server" />
+
+    <link rel="stylesheet" href="~/public/css/screen-narrow.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="~/public/css/print.css" type="text/css" media="print" />
+<!--[if IE]><link rel="stylesheet" href="ie.css" type="text/css" media="screen, projection" /><![endif]-->
+    
+    <!--- Import fancy-type plugin --->
+    <link rel="stylesheet" href="~/public/css/plugins/fancy-type/screen.css" type="text/css" />
+    <link rel="stylesheet" href="~/public/css/plugins/buttons/screen.css" type="text/css" />
+    <!--- Import custom styles --->
+    <link rel="stylesheet" href="~/public/css/site.css" type="text/css" />
+    <!--- Favicon --->
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+    <!--- Styles scribit -->
+    <link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="http://assets.skribit.com/stylesheets/SkribitSuggest.css" />
+    <style type="text/css" media="print" charset="utf-8">a#sk_tab{display:none !important;}</style>
+</head>
+
+
+<body>
+    <div id="header-bar">
+        <% Html.RenderPartial("QuickAccessBar"); %>
+    </div>
+    <div id="header">
+        <div id="header-content" class="container">
+            <div class="header-image span-7">
+                <a href="/"><img src="/public/images/barbarianmeetscoding_raleway_shadow.png" alt="Barbarian Meets Coding" /></a>
+            </div>
+            <div class="span-11 last">
+                <% Html.RenderAction("navbar", "navigation"); %>
+            </div>
+        </div>
+    </div>
+    <div id="page-content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+    </div>
+    <div id="footer">
+        <div id="footer-content" class="container">
+            <%Html.RenderPartial("Footer");%>
+        </div>
+    </div>
+
+    <div id="scripts-at-the-end">
+        <asp:ContentPlaceHolder ID="Scripts" runat="server" />
+        <!-- ScribIt -->
+        <script src="http://assets.skribit.com/javascripts/SkribitSuggest.js" type="text/javascript"></script>
+        <script type="text/javascript" charset="utf-8">
+            var skribit_settings = {};
+            skribit_settings.placement = "right";
+            skribit_settings.color = "#333333";
+            skribit_settings.text_color = "white";
+            skribit_settings.distance_vert = "20%";
+            skribit_settings.distance_horiz = "";
+            SkribitSuggest.suggest('http://skribit.com/lightbox/barbarian-meets-coding', skribit_settings);
+            </script>
+        <!-- Google Analytics -->
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-19776656-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+          </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,780 @@
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error, #content .field-validation-error
+{
+    color: #ff0000;
+}
+
+
+.field-validation-valid, #content .field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error, #content .input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors, #content .validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid, #content .validation-summary-valid
+{
+    display: none;
+}
+
+
+/*--------- Main --------*/
+body
+{
+    background-color: #989898;   
+}
+
+
+/*--------- Header Styles ----------------------------------*/
+
+#header-bar
+{
+    height: 25px;
+    width: 720px;
+    margin: 0 auto 0 auto;
+    background-image: url('images/bg-header.png');
+    text-align: right;
+}
+
+#header-bar ul
+{
+    padding-top: 2px;
+    list-style-type: none;
+}
+
+#header-bar ul li
+{
+    display: inline;
+    padding: 0 1px 0 0;
+}
+
+#header-bar ul li a
+{
+    text-decoration: none;
+    color: #888;
+    font-family: Sans-Serif;
+    font-size: 10px;
+}
+
+#header-bar ul li a:hover
+{
+    color: Orange;   
+}
+
+#header
+{
+    /*background-color: #7f7f7f;*/
+    /*background-color: #6A7070;*/
+    height: 50px;
+    width: 720px;
+    margin: 0 auto 0 auto;
+    /*border-bottom: 2px solid #97cbf5;*/
+    /* border-bottom: 2px solid #7f7f7f; */
+    background-image: url('images/bg-header-body.png');
+}
+
+#header .header-image img
+{
+    float:left;
+    margin-left: 10px;   
+}
+
+#header .navigation
+{
+    /*background-color: #7f7f7f;*/
+    /*background-color: #6A7070;*/
+    margin: 10px 10px 0 0;
+    text-align: right;
+}
+
+#header .navigation span
+{
+    margin: 0 0.5em 0 0;
+}
+
+#header .navigation span a
+{
+    text-decoration: none;
+    font-family: Cambria, 'Trebuchet MS', Verdana, San-Serif;
+    font-size: large;
+    font-weight: lighter;
+    color: Gray;
+}
+
+#header .navigation span a:hover
+{
+    color: Orange;   
+}
+
+/*-------- Footer Styles -------------------------------------*/
+
+#footer
+{
+    /*background-color: #6A7070;*/
+    height: 300px;
+    width: 720px;
+    margin: 0 auto;
+    padding-top: 25px;
+    /* border-top: 2px solid #97cbf5; */
+    background-image: url('images/bg-footer.png');
+}
+
+#footer .hotlinks
+{
+    font-family: Verdana, Sans-Serif;
+}
+
+#footer .followme
+{
+    font-family: Verdana, Sans-Serif;    
+}
+
+#footer .followme img
+{
+    padding-right: 5px;
+    float: left;  
+}
+
+#footer h2
+{
+    color: #888;
+    margin-left: 20px;
+    padding-left: 18px;
+    /*text-align: center;*/
+}
+
+#footer ul
+{
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+#footer ul a
+{
+    text-decoration: none;
+    font-weight: bold;
+    color: #aaa;
+}
+
+#footer ul a:hover
+{
+    color: Orange;   
+}
+
+#footer #creative-commons
+{
+    width: 660px;
+    margin: 10px auto 10px auto;
+    color: #666;
+    font-family: Sans-Serif;
+    font-size: 10px;
+}
+
+#footer #creative-commons img
+{
+    float: left;
+    margin: 0 5px 0 20px;   
+}
+
+#footer #creative-commons a
+{
+    text-decoration: none;
+    color: #888;
+}
+
+#footer #creative-commons a:hover
+{
+    color: Orange;   
+}
+
+#footer #vincms p
+{
+    text-align: center;
+    color: #666;
+    font-family: Sans-Serif;
+    font-size: 10px;  
+}
+
+#footer #vincms a
+{
+    text-decoration: none;
+    color: #888;
+}
+
+#footer #vincms a:hover
+{
+    color: Orange;   
+}
+
+
+/*--------  General Content Styles ------------------------------------*/
+
+#page-content
+{
+    width: 720px;
+    background-image: url('images/bg-body.png');
+    margin: 0 auto;
+    padding: 15px 0;
+    font-family: verdana, 'Trebuchet MS', Sans-serif;
+    font-size: 14px;
+}
+
+#page-content a
+{
+   text-decoration: none;
+   color: Gray;
+}
+
+#page-content a:hover
+{
+   color: #ffa500; 
+}
+
+#page-content h1 ,#page-content h2
+{
+    font-family: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+}
+
+#page-content h2 a
+{
+    color: Black;   
+}
+
+#page-content .go-to-link
+{
+    /*display: block;*/
+    float: right;
+    font-family: Garamond, Serif;
+}
+
+#page-content .go-to-link a
+{
+    font-size: small;
+}
+
+#page-content p+p
+{
+    text-indent: 0;
+    margin-top: -0.5em;
+}
+
+#page-content h2.section-header
+{
+    font-size: 17px;
+    margin: 0 auto 18px auto;
+    padding-bottom: 10px;
+    width: 670px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+#page-content blockquote
+{
+    font-size: 16px;
+    padding-bottom: 5px;
+    margin-bottom: 0px;
+}
+
+#page-content blockquote p
+{
+    padding: 0 35px;    
+}
+
+#page-content blockquote > p:first-child
+{
+    background: url('images/left-quote.png') no-repeat left top;
+}
+
+#page-content blockquote > p:last-of-type
+{
+    background: url('images/right-quote.png') no-repeat right bottom;
+    margin-bottom: 0px;
+}
+
+#page-content cite.quote-cite
+{
+    margin: 0 24px;
+    padding: 0 35px 10px 35px;
+    text-align: right;
+    display:block;
+    font-weight: bold;
+}
+
+/* ----- images styles ----------*/
+
+#page-content img.image-left
+{
+    float: left;
+    margin: 10px;
+}
+
+#page-content img.image-right
+{
+    float: right;
+    margin: 10px;   
+}
+
+#page-content img.image-center
+{
+    display: block;
+    margin: 10px auto;   
+}
+
+/* ------ blog Content Styles ------*/
+
+#content
+{
+    font-family:  Verdana, 'Trebuchet MS', sans-serif; 
+    font-size: 14px;
+}
+
+#content h1, #content h2
+{
+    font-family: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
+}
+
+#content .blog-postlist div
+{
+    padding-left: 20px;
+}
+
+#content div#post-actions
+{
+    padding-left: 0px;
+    margin-bottom: 25px;  
+}
+
+#content div#generic-page-content
+{
+    display: block;
+    width: 670px;
+    margin: 0 20px;   
+}
+
+#content #post-actions .comment
+{
+    font-family: Arial, Sans-Serif;
+    font-weight: bold;
+    font-size: large;
+    margin-bottom:10px;
+    color: #0cf;
+    text-align: right;
+}
+
+#content #post-actions .comment span
+{
+    padding-right: 20px;
+}
+
+#content .read-more
+{
+    /*
+    font-family: Garamond, Serif;
+    font-size: 14px;  */
+    font-family: Arial, Sans-Serif;
+    font-size: large;
+    margin-bottom:10px;
+}
+
+#content .post-content
+{
+    margin: .5em 0 .5em 0;   
+}
+
+#content .post-tags
+{
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif; 
+    font-size: 12px;
+    font-style: italic;
+}
+
+#content .post-categories
+{
+    margin-bottom: 1em; 
+    font-size: 12px;  
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif;
+    font-style: italic;
+}
+
+#content .post-signature
+{
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif;
+    font-style: italic;   
+}
+
+/*---- Blog Post Detail Content Styles ----*/
+
+#detail-content .details-post-title
+{
+    margin: 10px 0 20px 0;    
+}
+
+#detail-content h1, #detail-content h2
+{
+   padding: 0 20px;
+}
+
+#detail-content #tweet iframe
+{
+    padding-left: 30px;
+}
+
+#detail-content .details-post-summary
+{
+    color: Gray;
+    font: normal normal x-large Garamond, serif;
+    margin-bottom: 1em;
+}
+
+#detail-content .details-post-summary p
+{
+   padding: 0 20px;    
+}
+
+#detail-content .details-post-signature
+{
+    font: italic 12px 'Segoe UI', Tahoma, Verdana, San-Serif;  
+    text-align: right;   
+    /*padding: 0 35px 10px 0;*/
+    margin-bottom: 20px;
+    /*width: 675px;*/
+    /*border-bottom: 1px solid #e3e3e3;*/
+}
+
+#detail-content .details-post-signature p
+{
+    display: block;
+    width: 670px;
+    text-align: right;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+#detail-content .details-post-bodycontent
+{
+    margin-bottom: 20px;
+}
+
+#detail-content .details-post-bodycontent p
+{
+    padding: 0 20px;
+}
+
+#detail-content .share iframe
+{
+   padding-left: 20px;
+}
+
+/*------- login ----------*/
+
+#content #login-form
+{
+    font-size: 14px;   
+}
+
+#content #login-form form
+{
+    margin: 10px 0;   
+}
+
+#content #login-form h1, #content #login-form div
+{
+    padding: 0 20px;
+}
+
+#content #login-form p
+{
+    padding: 0 20px;
+    font-size: 18px    
+}
+
+/* ------- forms -------------*/
+/* ------- mainly for comments ----------*/
+
+#page-content #comment-form form
+{
+    display: block;
+    width: 670px;
+    margin: 0 20px;
+}
+
+#page-content .form-label
+{
+    font-size: 16px;
+    font-family: Verdana, San-Serif;
+    margin: 0 10px;
+}
+
+#page-content .form-control
+{
+    background-color: #fffbc2;
+    font-family: Verdana, San-Serif;
+    font-size: 14px;
+    color: Gray;
+}
+
+#page-content .form-long
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 640px;
+}
+
+#page-content .form-short
+{
+    width: 150px;
+}
+
+#page-content .form-big
+{
+    height: 400px;
+}
+
+#page-content .form-medium
+{
+    height: 200px;   
+}
+
+#page-content .form-small
+{
+    height: 100px;   
+}
+
+#page-content .comment-author-details input
+{
+    font-weight: bold;
+    font-family: Verdana, San-Serif;
+    font-size: large;
+    color: Gray;
+}
+
+#page-content .comment-author-details .form-user-website
+{
+    width: 330px;
+    font-weight: normal;
+}
+
+#page-content .form-submit
+{
+      display: inline;
+      margin: 0.7em 0.5em 0.7em 0;
+      padding: 5px 10px 5px 7px;   /* Links */
+  
+      border:1px solid #dedede;
+      border-top:1px solid #eee;
+      border-left:1px solid #eee;
+
+      background-color:#f5f5f5;
+      font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+      font-size:100%;
+      line-height:130%;
+      text-decoration:none;
+      font-weight:bold;
+      color:#565656;
+      cursor:pointer;
+      float: none;
+}
+
+#page-content .negative:hover
+{
+      background-color:#fbe3e4;
+      border:1px solid #fbc2c4;
+      color:#d12f19;
+}
+
+#page-content .mild:hover
+{
+      background-color:#dff4ff;
+      border:1px solid #c2e1ef;
+      color:#336699;
+}
+
+#page-content .positive:hover{
+      background-color:#E6EFC2;
+      border:1px solid #C6D880;
+      color:#529214;    
+}
+
+/*--------- Admin content -----------*/
+
+.message
+{
+      display: block;
+      margin: 0.7em 0.5em 0.7em 0.5em;
+      padding: 5px 10px 5px 7px;   /* Links */
+
+      font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+      font-size:100%;
+      line-height:130%;
+      text-decoration:none;  
+}
+
+.message-info
+{
+      color:#336699;
+      background-color:#dff4ff;
+      border-top:1px solid #c2e1ef;
+      border-bottom:1px solid #c2e1ef;
+}
+
+.message-error
+{
+      background-color:#fbe3e4;
+      color:#d12f19;
+      border-top:1px solid #fbc2c4;
+      border-bottom:1px solid #fbc2c4;
+}
+
+/* ------- content related to a blog post ------- */
+
+#page-content #related-content
+{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#page-content #related-content div.gray-box
+{
+    border-radius: 20px 10px;
+    -moz-border-radius: 20px 10px;
+    font-size: 12px;
+    width: 670px;
+    margin: 0 20px 0 20px;
+    padding: 10px 0;
+}
+
+#page-content #related-content .gray-box ul
+{
+    list-style-type: none;
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif;
+    font-weight: bold;
+}
+
+#page-content #related-content .gray-box ul li a
+{
+    text-decoration: none;
+    color: #e3e3e3;
+}
+
+#page-content #related-content .gray-box ul li a:hover
+{
+    color: #ffa500;
+}
+
+#page-content #comment-list
+{
+    margin-bottom: 2em;
+}
+
+#page-content #comment-list p
+{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#page-content #comment-list div.comment-block
+{
+    display: block;
+    width: 670px;
+    margin: 0 20px 10px 20px;
+}
+
+#page-content #comment-list .comment-author-info
+{
+    font-weight: bold;
+    font-size: large;
+    margin-bottom:10px;
+    color: #0cf;
+}
+
+#page-content #comment-list .comment-author-info span.comment-date
+{
+    color: #555;
+}
+
+/*---- SideBar styles ------*/
+
+#page-content #sidebar
+{
+    font-size: 12px;    
+}
+
+#sidebar h2
+{
+    color: Black;
+    padding-bottom: 5px;
+    width: 170px;
+    border-bottom: 1px solid #97cbf5;
+}
+
+#sidebar .gray-box
+{
+    border-radius: 20px 10px;
+    -moz-border-radius: 20px 10px;
+}
+
+#sidebar ul
+{
+    list-style-type: none;
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif;
+    font-weight: bold;
+    color: Gray;
+}
+
+#sidebar ul li a
+{
+    text-decoration: none;
+    color: Gray;
+}
+
+#sidebar ul li a:hover
+{
+    color: #ffa500;
+}
+
+#sidebar #tag-list ul
+{
+    list-style-type: none;
+    padding: 0 0 0 0;
+}
+
+#sidebar #tag-list ul li
+{
+    display: inline;
+    margin: 0 0.1em 0 0.1em;
+    padding: 0;
+}
+
+#sidebar #author-bio .author-description
+{
+    font-size: medium;
+    padding: 0 .7em 0 .7em;  
+    margin-top: .5em;
+}
+
+/* --------- Errors -----------*/
+
+#page-content .image-error img
+{
+    display: block;
+    margin: 0 auto 0 auto;
+    width: 500px;
+}
+
+#page-content div.admin-info
+{
+    padding-left: 20px;
+    font-size: large;
+}

@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="head" runat="server">
+
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+    <asp:ContentPlaceHolder ID="HeaderContent" runat="server" />
+
+    <link rel="stylesheet" href="~/public/css/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="~/public/css/print.css" type="text/css" media="print" />
+    <!--[if IE]><link rel="stylesheet" href="ie.css" type="text/css" media="screen, projection" /><![endif]-->
+    
+    <!--- Import fancy-type plugin --->
+    <link rel="stylesheet" href="~/public/css/plugins/fancy-type/screen.css" type="text/css" />
+    <link rel="stylesheet" href="~/public/css/plugins/buttons/screen.css" type="text/css" />
+    <!--- Import jQuery Css --->
+    <link rel="stylesheet" href="~/public/css/jquery/jquery-ui-1.8.5.custom.css" type="text/css" />
+    <!--- Import custom styles --->
+    <link rel="stylesheet" href="~/public/css/admin.css" type="text/css" />
+    <!--- Scripts --->
+    <script type="text/javascript" src="/public/javascript/jquery-1.4.3.min.js"></script>  
+    <script type="text/javascript" src="/public/javascript/jquery-ui-1.8.5.custom.min.js"></script>
+    <!--- Favicon --->
+    <link rel="SHORTCUT ICON" href="/favicon.ico"/>
+</head>
+<body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#accordion').accordion();
+        });  
+    </script> 
+    <div id="admin-header-bar">
+        <% Html.RenderPartial("QuickAccessBar"); %>
+    </div>
+    <div id="admin-header">
+        <div id="header-content container">
+            <div class="header-image span-8">
+                <a href="/"><img src="/public/images/barbarianmeetscoding_raleway_shadow.png" alt="Barbarian Meets Coding" /></a>
+            </div>
+            <div class="span-16 last">
+                <% Html.RenderAction("navbar", "navigation"); %>
+            </div>
+        </div>
+    </div>
+    <div id="admin-page-content">
+        <div id="content" class="container">
+            <div id="admin-sidebar" class="span-7 colborder">
+                    <% Html.RenderPartial("AdminBar"); %>
+            </div>
+            <div id="admin-content" class="span-16 last">
+                <% Html.RenderPartial("TempDataMessages"); %>
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+        </div>
+    </div>
+    <div id="admin-footer">
+
+    </div>
+    <div id="scripts-at-the-end">
+        <asp:ContentPlaceHolder ID="Scripts" runat="server" />
+    </div>
+</body>
+</html>

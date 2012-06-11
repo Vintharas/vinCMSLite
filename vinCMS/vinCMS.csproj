@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5C5B2F4-F9E8-41E0-B11C-03CC4501022B}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>vinCMS</RootNamespace>
+    <AssemblyName>vinCMS</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary">
+      <HintPath>..\lib\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Calabonga.Mvc.PagedListExt">
+      <HintPath>..\packages\PagedListExt.0.5.6\lib\net40\Calabonga.Mvc.PagedListExt.dll</HintPath>
+    </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender.v4.0">
+      <HintPath>..\lib\HibernatingRhinos.Profiler.Appender.v4.0.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary">
+      <HintPath>..\lib\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web">
+      <HintPath>..\packages\Ninject.Web.3.0.0.5\lib\net40-full\Ninject.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net40-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.Web.Mvc1.3.0.0.6\lib\net40-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.2.0.0.2000\lib\net40\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.14\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.3.14\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.1\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\NinjectWeb.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Controllers\TagController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\Html\HtmlHelpers.Extensions.cs" />
+    <Compile Include="Helpers\Routing\RoutingHelpers.cs" />
+    <Compile Include="Infraestructure\Authentication\FormsAuthWrapper.cs" />
+    <Compile Include="Infraestructure\Authentication\IFormsAuth.cs" />
+    <Compile Include="Infraestructure\Authentication\IMembership.cs" />
+    <Compile Include="Infraestructure\Authentication\MembershipWrapper.cs" />
+    <Compile Include="Infraestructure\Authentication\VinCmsMembershipProvider.cs" />
+    <Compile Include="Infraestructure\Constants.cs" />
+    <Compile Include="Infraestructure\ErrorHandling\RouteNotFoundException.cs" />
+    <Compile Include="Infraestructure\Filters\ExceptionErrorAttribute.cs" />
+    <Compile Include="Infraestructure\Filters\TransactionAttribute.cs" />
+    <Compile Include="Infraestructure\Logging\ILogger.cs" />
+    <Compile Include="Infraestructure\Logging\ILogManager.cs" />
+    <Compile Include="Infraestructure\Logging\LoggerWrapper.cs" />
+    <Compile Include="Infraestructure\Logging\LogManagerWrapper.cs" />
+    <Compile Include="Models\AdminCategoryViewModel.cs" />
+    <Compile Include="Models\AdminMediaViewModel.cs" />
+    <Compile Include="Models\AdminTagViewModel.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\BlogPostViewModel.cs" />
+    <Compile Include="Models\BlogPostDetailModel.cs" />
+    <Compile Include="Models\ErrorViewModel.cs" />
+    <Compile Include="Models\NavBarViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Models\PagedList.Extensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Public\css\admin.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Public\css\home.css" />
+    <Content Include="Public\css\ie.css" />
+    <Content Include="Public\css\images\bg-admin-body.png" />
+    <Content Include="Public\css\images\bg-admin-footer.png" />
+    <Content Include="Public\css\images\bg-admin-header-body.png" />
+    <Content Include="Public\css\images\bg-admin-header.png" />
+    <Content Include="Public\css\images\bg-body.png" />
+    <Content Include="Public\css\images\bg-footer.png" />
+    <Content Include="Public\css\images\bg-header-body.png" />
+    <Content Include="Public\css\images\bg-header.png" />
+    <Content Include="Public\css\images\left-quote.png" />
+    <Content Include="Public\css\images\right-quote.png" />
+    <Content Include="Public\css\images\serenity-gray-alpha.png" />
+    <Content Include="Public\css\images\serenity-gray.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Public\css\jquery\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Public\css\jquery\images\ui-icons_222222_256x240.png" />
+    <Content Include="Public\css\jquery\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Public\css\jquery\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Public\css\jquery\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Public\css\jquery\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Public\css\jquery\jquery-ui-1.8.5.custom.css" />
+    <Content Include="Public\css\plugins\buttons\icons\cross.png" />
+    <Content Include="Public\css\plugins\buttons\icons\key.png" />
+    <Content Include="Public\css\plugins\buttons\icons\tick.png" />
+    <Content Include="Public\css\plugins\buttons\screen.css" />
+    <Content Include="Public\css\plugins\fancy-type\screen.css" />
+    <Content Include="Public\css\plugins\link-icons\icons\doc.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\email.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\external.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\feed.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\im.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\pdf.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\visited.png" />
+    <Content Include="Public\css\plugins\link-icons\icons\xls.png" />
+    <Content Include="Public\css\plugins\link-icons\screen.css" />
+    <Content Include="Public\css\plugins\rtl\screen.css" />
+    <Content Include="Public\css\print.css" />
+    <Content Include="Public\css\screen-narrow.css" />
+    <Content Include="Public\css\screen.css" />
+    <Content Include="Public\css\site.css" />
+    <Content Include="Public\css\src\forms.css" />
+    <Content Include="Public\css\src\grid.css" />
+    <Content Include="Public\css\src\grid.png" />
+    <Content Include="Public\css\src\ie.css" />
+    <Content Include="Public\css\src\print.css" />
+    <Content Include="Public\css\src\reset.css" />
+    <Content Include="Public\css\src\typography.css" />
+    <Content Include="Public\images\barbarianmeetscoding.png" />
+    <Content Include="Public\images\barbarianmeetscoding_raleway.png" />
+    <Content Include="Public\images\barbarianmeetscoding_raleway_big.png" />
+    <Content Include="Public\images\barbarianmeetscoding_raleway_big_shadow.png" />
+    <Content Include="Public\images\barbarianmeetscoding_raleway_shadow.png" />
+    <Content Include="Public\images\delicious-icon.png" />
+    <Content Include="Public\images\error403.png" />
+    <Content Include="Public\images\error404.png" />
+    <Content Include="Public\images\error500.png" />
+    <Content Include="Public\images\facebook-icon.png" />
+    <Content Include="Public\images\Feed-icon.png" />
+    <Content Include="Public\images\linked-in-icon.png" />
+    <Content Include="Public\images\twitter-icon.png" />
+    <Content Include="Public\images\wordpress-icon.png" />
+    <Content Include="Public\javascript\jquery-1.4.3.js" />
+    <Content Include="Public\javascript\jquery-1.4.3.min.js" />
+    <Content Include="Public\javascript\jquery-ui-1.8.5.custom.min.js" />
+    <Content Include="Scripts\PagedList\PagedList.Mvc.js" />
+    <Content Include="Scripts\PagedList\PagedList.Mvc.Template.html" />
+    <Content Include="Views\Account\LogIn.aspx" />
+    <Content Include="Views\Admin\AdminBar.ascx" />
+    <Content Include="Views\Admin\Categories.aspx" />
+    <Content Include="Views\Admin\CreateBlogPost.aspx" />
+    <Content Include="Views\Admin\CreatePage.aspx" />
+    <Content Include="Views\Admin\DeleteBlogPost.aspx" />
+    <Content Include="Views\Admin\DeleteCategory.aspx" />
+    <Content Include="Views\Admin\DeleteComment.aspx" />
+    <Content Include="Views\Admin\DeleteMedia.aspx" />
+    <Content Include="Views\Admin\DeletePage.aspx" />
+    <Content Include="Views\Admin\DeleteTag.aspx" />
+    <Content Include="Views\Admin\EditBlogPost.aspx" />
+    <Content Include="Views\Admin\EditCategory.aspx" />
+    <Content Include="Views\Admin\EditPage.aspx" />
+    <Content Include="Views\Admin\EditTag.aspx" />
+    <Content Include="Views\Admin\Index.aspx" />
+    <Content Include="Views\Admin\Media.aspx" />
+    <Content Include="Views\Admin\PreviewBlogPost.aspx" />
+    <Content Include="Views\Admin\Tags.aspx" />
+    <Content Include="Views\Blog\Details.aspx" />
+    <Content Include="Views\Blog\Index.aspx" />
+    <Content Include="Views\Shared\EditorTemplates\MediumTextArea.ascx" />
+    <Content Include="Views\Shared\Footer.ascx" />
+    <Content Include="Views\Shared\LikeButton.ascx" />
+    <Content Include="Views\Shared\QuickAccessBar.ascx" />
+    <Content Include="Views\Shared\TweetButton.ascx" />
+    <Content Include="Views\Shared\TweetButtonHorizontal.ascx" />
+    <Content Include="Views\Category\List.ascx" />
+    <Content Include="Views\Error\HandleError.aspx" />
+    <Content Include="Views\Navigation\NavBar.ascx" />
+    <Content Include="Views\Page\Details.aspx" />
+    <Content Include="Views\Page\Home.aspx" />
+    <Content Include="Views\Shared\AuthorBio.ascx" />
+    <Content Include="Views\Shared\BlogPostCategories.ascx" />
+    <Content Include="Views\Shared\BlogPosts.ascx" />
+    <Content Include="Views\Shared\BlogPostSummary.ascx" />
+    <Content Include="Views\Shared\BlogPostTags.ascx" />
+    <Content Include="Views\Shared\Category.ascx" />
+    <Content Include="Views\Shared\Comment.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\BlogPost.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\BlogPostSummary.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\Comment.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\Media.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\Page.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\BigBox.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\BlogPost.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\Category.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\Comment.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\Page.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\Tag.ascx" />
+    <Content Include="Views\Shared\ListBlogPostSummary.ascx" />
+    <Content Include="Views\Shared\PagedBlogPostSummary.ascx" />
+    <Content Include="Views\Shared\PagedListCategories.ascx" />
+    <Content Include="Views\Shared\PagedListMedia.ascx" />
+    <Content Include="Views\Shared\PagedListTags.ascx" />
+    <Content Include="Views\Shared\Pager.ascx" />
+    <Content Include="Views\Shared\PagerCategories.ascx" />
+    <Content Include="Views\Shared\PagerMedia.ascx" />
+    <Content Include="Views\Shared\PagerTags.ascx" />
+    <Content Include="Views\Shared\ListPagesSummary.ascx" />
+    <Content Include="Views\Shared\PageSummary.ascx" />
+    <Content Include="Views\Shared\RelatedBlogPosts.ascx" />
+    <Content Include="Views\Shared\Tag.ascx" />
+    <Content Include="Views\Shared\TempDataMessages.ascx" />
+    <Content Include="Views\Tag\List.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Public\javascript\MicrosoftAjax.js" />
+    <Content Include="Public\javascript\MicrosoftAjax.debug.js" />
+    <Content Include="Public\javascript\MicrosoftMvcAjax.js" />
+    <Content Include="Public\javascript\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Public\javascript\MicrosoftMvcValidation.js" />
+    <Content Include="Public\javascript\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CodeTemplates\" />
+    <Folder Include="Infraestructure\Storage\Abstracts\" />
+    <Folder Include="Infraestructure\Storage\EFStorage\" />
+    <Folder Include="Public\media\" />
+    <Folder Include="Reporting\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainEDM\DomainStorage.csproj">
+      <Project>{F21EBE78-C54E-45D9-A31F-BD4B1B906A68}</Project>
+      <Name>DomainStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DomainRepos\DomainRepos.csproj">
+      <Project>{C08A141C-CCB7-4E46-8A98-80E6233D8F62}</Project>
+      <Name>DomainRepos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{B0A0AAB4-5FA5-425B-93D5-189040E48DB5}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>31477</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

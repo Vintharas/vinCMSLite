@@ -1,0 +1,476 @@
+﻿/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error, #content .field-validation-error
+{
+    color: #ff0000;
+}
+
+
+.field-validation-valid, #content .field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error, #content .input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors, #content .validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid, #content .validation-summary-valid
+{
+    display: none;
+}
+
+
+/*--------- Main --------*/
+body
+{
+    background-color: #989898;   
+}
+
+/*----- Admin header-bar -------*/
+
+#admin-header-bar
+{
+    height: 25px;
+    width: 960px;
+    margin: 0 auto 0 auto;
+    background-image: url('images/bg-admin-header.png');
+    text-align: right;
+}
+
+#admin-header-bar ul
+{
+    margin-top: 2px;
+    list-style-type: none;
+}
+
+#admin-header-bar ul li
+{
+    display: inline;
+    padding: 0 1px 0 0;
+}
+
+#admin-header-bar ul li a
+{
+    text-decoration: none;
+    color: #888;
+    font-family: Serif;
+    font-size: 10px;
+}
+
+#admin-header-bar ul li a:hover
+{
+    color: Orange;   
+}
+
+
+/* ------------- admin header ----------*/
+
+#admin-header
+{
+    height: 50px;
+    width: 960px;
+    margin: 0 auto 0 auto;
+    /*border-bottom: 2px solid #97cbf5;*/
+    /* border-bottom: 2px solid #7f7f7f; */
+    background-image: url('images/bg-admin-header-body.png');
+}
+
+#admin-header .header-image
+{
+    margin-left:10px;
+    float:left;
+}
+
+#admin-header .navigation
+{
+    /*background-color: #7f7f7f;*/
+    /*background-color: #6A7070;*/
+    margin: 12px 10px 0 0;
+    text-align: right;
+}
+
+#admin-header .navigation span
+{
+    margin: 0 0.5em 0 0;    
+}
+
+#admin-header .navigation span a
+{
+    text-decoration: none;
+    font-family: Cambria, 'Trebuchet MS', Verdana, San-Serif;
+    font-size: large;
+    font-weight: lighter;
+    color: Gray;
+}
+
+#admin-header .navigation span a:hover
+{
+    color: Orange;   
+}
+
+/*-------- Admin footer Styles -------------------------------------*/
+
+#admin-footer
+{
+    /*background-color: #7f7f7f;*/
+    /*background-color: #6A7070;*/
+    height: 200px;
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 25px;
+    /* border-top: 2px solid #97cbf5; */
+    background-image: url('images/bg-admin-footer.png');
+}
+
+/*--------  Admin Content Styles ------------------------------------*/
+
+/*-------- General Admin content Styles ----------------------------*/
+
+#admin-page-content
+{
+    width: 960px;
+    background-image: url('images/bg-admin-body.png');
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+#admin-content .post-summary-title a
+{
+    font-weight: bold;   
+    color: #6A7070;
+}
+
+#admin-content .post-summary-title a:hover
+{
+    font-weight: bold;   
+    color: #ffa500;
+}
+
+#admin-content .form-category-list
+{
+    margin-bottom: 1em;   
+}
+
+#admin-page-content #admin-content table
+{
+    width: 575px;
+}
+
+#content
+{
+    font-family:  Verdana, sans-serif; 
+    font-size: 14px;
+    /*padding: 0 0 0 20px;*/
+}
+
+#content a
+{
+   text-decoration: none;
+   color: Gray;
+}
+
+#content a:hover
+{
+   color: #ffa500; 
+}
+
+#content h2
+{
+    font-family: Verdana, 'Segoe UI', Sans-Serif;
+}
+
+#content h2 a
+{
+    color: Black;   
+}
+
+/*------- admin sidebar styles --------*/
+
+#content #admin-sidebar #accordion
+{
+    margin-left: 13px;   
+}
+
+/*------- admin index styles ----------*/
+
+#admin-content #index-content h1
+{
+    color: Gray;
+}
+
+#admin-content #index-content h2
+{
+    font-size: 20px;
+    text-align: right;
+    margin-right: 55px;
+}
+
+#admin-content #index-content table
+{
+    margin-bottom: 40px;   
+}
+
+
+/* --------- blogpost and page previews --------*/
+
+#content .go-to-link
+{
+    /*display: block;*/
+    float: right;
+    font-family: Garamond, Serif;
+}
+
+#content .go-to-link a
+{
+    font-size: small;
+}
+
+#content .read-more
+{
+    font-family: Garamond, Serif;
+    font-size: 14px;  
+    margin-bottom: 25px; 
+}
+
+#content .post-content
+{
+    margin: .5em 0 .5em 0;   
+}
+
+#content .post-tags
+{
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif; 
+    font-size: 12px;
+    font-style: italic;
+}
+
+#content .post-categories
+{
+    margin-bottom: 1em; 
+    font-size: 12px;  
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif;
+    font-style: italic;
+}
+
+#content .post-signature
+{
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif;
+    font-style: italic;   
+}
+
+/*---- Blog Post Detail Content Styles ----*/
+
+#content .post-summary
+{
+    color: Gray;
+    font-style: italic;
+    font-weight: bold;
+    font-size: x-large;
+    margin-bottom: 1em;
+    font-family: Garamond, serif;
+}
+
+#content p+p
+{
+    text-indent: 0;
+}
+
+#content .details-post-signature
+{
+    font-size: 12px;
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif;
+    font-style: italic;   
+    text-align: right;   
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #e3e3e3; 
+}
+
+#content .details-post-bodycontent
+{
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #e3e3e3;
+    text-indent: 0;
+}
+
+/* ------- forms -------------*/
+
+#content .form-label
+{
+    font-size: 16px;
+    font-family: Verdana, San-Serif;
+    margin-right: 10px;
+}
+
+#content .form-control
+{
+    background-color: #fffbc2;
+    font-family: Verdana, San-Serif;
+    font-size: 14px;
+}
+
+#content .form-long
+{
+    width: 470px;
+}
+
+#content .form-short
+{
+    width: 150px;
+}
+
+#content .form-big
+{
+    height: 400px;
+}
+
+#content .form-medium
+{
+    height: 200px;   
+}
+
+#content .form-small
+{
+    height: 100px;   
+}
+
+#content .form-control-title
+{
+    font-weight: bold;
+    font-family: Verdana, San-Serif;
+    font-size: x-large;
+    width: 470px;
+    background-color: #fffbc2;
+}
+
+#content .form-submit
+{
+      display: inline;
+      margin: 0.7em 0.5em 0.7em 0;
+      padding: 5px 10px 5px 7px;   /* Links */
+  
+      border:1px solid #dedede;
+      border-top:1px solid #eee;
+      border-left:1px solid #eee;
+
+      background-color:#f5f5f5;
+      font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+      font-size:100%;
+      line-height:130%;
+      text-decoration:none;
+      font-weight:bold;
+      color:#565656;
+      cursor:pointer;
+      float: none;
+}
+
+#content .negative:hover
+{
+      background-color:#fbe3e4;
+      border:1px solid #fbc2c4;
+      color:#d12f19;
+}
+
+#content .mild:hover
+{
+      background-color:#dff4ff;
+      border:1px solid #c2e1ef;
+      color:#336699;
+}
+
+#content .positive:hover{
+      background-color:#E6EFC2;
+      border:1px solid #C6D880;
+      color:#529214;    
+}
+
+/*--------- Admin content -----------*/
+
+.message
+{
+      display: block;
+      margin: 0.7em 0.5em 0.7em 0;
+      padding: 5px 10px 5px 7px;   /* Links */
+
+      font-family:"Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+      font-size:100%;
+      line-height:130%;
+      text-decoration:none;  
+}
+
+.message-info
+{
+      color:#336699;
+      background-color:#dff4ff;
+      border-top:1px solid #c2e1ef;
+      border-bottom:1px solid #c2e1ef;
+}
+
+.message-error
+{
+      background-color:#fbe3e4;
+      color:#d12f19;
+      border-top:1px solid #fbc2c4;
+      border-bottom:1px solid #fbc2c4;
+}
+
+/* ------- content related to a blog post ------- */
+
+#content #related-content
+{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+#content #related-content .gray-box
+{
+    border-radius: 20px 10px;
+    -moz-border-radius: 20px 10px;
+    font-size: 12px;
+}
+
+#content #related-content .gray-box ul
+{
+    list-style-type: none;
+    font-family: 'Segoe UI', Tahoma, Verdana, San-Serif;
+    font-weight: bold;
+}
+
+#content #related-content .gray-box ul li a
+{
+    text-decoration: none;
+    color: #e3e3e3;
+}
+
+#content #related-content .gray-box ul li a:hover
+{
+    color: #ffa500;
+}
+
+#content #comment-list
+{
+    margin-bottom: 2em;
+}
+
+#content #comment-list h2
+{
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #97cbf5;
+}
+
+#content #comment-form h2
+{
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #97cbf5;
+}

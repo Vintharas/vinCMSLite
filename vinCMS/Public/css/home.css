@@ -1,0 +1,57 @@
+﻿
+
+ #home
+ {
+    width: 600px;
+    margin: 0 auto 0 auto;
+ }
+ 
+  #home-content
+ {
+    width: 600px;
+    margin: 0 auto 0 auto;
+ }
+ 
+ #home .image-center
+ {
+    border-bottom: 2px solid #97cbf5;
+    width: 600px;
+    margin: 300px auto 0 auto;
+ }
+ 
+ #home .image-center img
+ {
+    display:block;
+    margin: 0 auto 0 auto;
+ }
+ 
+ #home-content p
+ {
+    font-size: large;
+ }
+ 
+ #home-navbar
+ {
+     margin: 0 auto 0 auto;
+     width: 600px;
+     font-family: Cambria, Sans-serif;
+     font-size: 18px;
+     background: #ffffff url('images/serenity-gray.png') no-repeat center right;
+ }
+ 
+ #home-navbar div
+ {  
+    float:left;
+ }
+ 
+ #home-navbar a
+ {
+     color: Gray;
+     text-decoration: none;
+ }
+ 
+ #home-navbar a:hover
+ {
+    color: Orange;   
+ }
+ 
